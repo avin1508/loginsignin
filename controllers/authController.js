@@ -33,7 +33,7 @@ async function login(req, res) {
 }
 
 async function signUp(req, res) {
-  const { name, email, password, confirmPassword, age, gender, country, bio } = req.body;
+  const { name, email, password, confirmPassword, profilePic, status, mobile, countryCode } = req.body;
 
   try {
     console.log('Attempting to sign up with email:', email);
@@ -49,10 +49,10 @@ async function signUp(req, res) {
       name,
       email,
       password: hashedPassword,
-      age,
-      gender,
-      country,
-      bio,
+      profilePic,
+      status,
+      mobile,
+      countryCode,
     });
 
     console.log('User signed up successfully with email:', email);
