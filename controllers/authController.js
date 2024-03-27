@@ -23,7 +23,6 @@ async function login(req, res) {
 
     console.log('Login successful for email:', email);
 
-
     const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
     return res.status(200).json({ token });
@@ -34,7 +33,7 @@ async function login(req, res) {
 }
 
 async function signUp(req, res) {
-  const { name, email, password, confirmPassword } = req.body;
+  const { name, email, password, confirmPassword, age, gender, country, bio } = req.body;
 
   try {
     console.log('Attempting to sign up with email:', email);
@@ -49,7 +48,11 @@ async function signUp(req, res) {
     const newUser = await User.create({
       name,
       email,
-      password: hashedPassword, 
+      password: hashedPassword,
+      age,
+      gender,
+      country,
+      bio,
     });
 
     console.log('User signed up successfully with email:', email);
