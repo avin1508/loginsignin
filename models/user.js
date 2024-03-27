@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../config/database.js'; 
+import sequelize from '../config/database.js';
 
-const User = sequelize.define('newuser', {
+const User = sequelize.define('newusertable', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -15,22 +15,24 @@ const User = sequelize.define('newuser', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  age: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-  },
-  gender: {
+  profilePic: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  country: {
+  status: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  bio: {
-    type: DataTypes.TEXT,
+  mobile: {
+    type: DataTypes.STRING,
     allowNull: true,
   },
+  countryCode: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+}, {
+  timestamps: true,
 });
 
 export default User;
