@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../config/database.js'; // Adjust the import path as needed
+import sequelize from '../config/database.js'; 
 
-const User = sequelize.define('User', {
+const User = sequelize.define('newuser', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -14,6 +14,22 @@ const User = sequelize.define('User', {
   password: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  age: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+  gender: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  country: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  bio: {
+    type: DataTypes.TEXT,
+    allowNull: true,
   },
 });
 
